@@ -18,13 +18,14 @@ def create_embeddings():
     movies['combined_text']=movies['Description']+'. '+movies['Keywords']
     embeddings = model.encode(movies['combined_text'].tolist(), show_progress_bar=True)
 
-    with open('movies_data4.pkl', 'wb') as f:
+    with open('movies_data.pkl', 'wb') as f:
         pickle.dump(movies, f)
 
-    with open('movies_embeddings4.pkl', 'wb') as f:
+    with open('movies_embeddings.pkl', 'wb') as f:
         pickle.dump(embeddings, f)
 
     print("Data processing and embedding creation completed successfully.")
 
 if __name__ == "__main__":
     create_embeddings()
+
